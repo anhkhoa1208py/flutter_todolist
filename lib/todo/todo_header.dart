@@ -22,7 +22,9 @@ class TodoHeader extends StatelessWidget {
         ),
         RaisedButton.icon(
             onPressed: () {
-              bloc.event.add(AddTodoEvent(txtTodoController.text));
+              if(!txtTodoController.text.isEmpty){
+                bloc.event.add(AddTodoEvent(txtTodoController.text));
+              }
             }, icon: Icon(Icons.add), label: Text('Add')),
       ],
     );
